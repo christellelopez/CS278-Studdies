@@ -37,7 +37,7 @@ nav {
 .brand-name {
     font-weight: 600;
     font-size: 28px; /* Adjust size as needed */
-    color: #2e235e;
+    color: #333;
 }
 
 .nav-links a {
@@ -49,7 +49,7 @@ nav {
 }
 
 .nav-links a:hover {
-    color: #796db0; /* Color on hover. Change as per your theme */
+    color: #8ba4ff; /* Color on hover. Change as per your theme */
 }
 
 /* Main Content Styles */
@@ -74,7 +74,7 @@ nav {
 }
 
 .intro h1 {
-    background: linear-gradient(90deg, #796db0, #272339); 
+    background: linear-gradient(90deg, #8ba4ff, #216bff); 
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -86,7 +86,7 @@ nav {
 }
 
 .intro p {
-    color: black;
+    color: #444;
     font-size: 1.4rem;
     font-weight: 500;
     margin-bottom: 60px; /* Spacing between subtext and buttons */
@@ -102,7 +102,7 @@ nav {
 .primary-btn {
     font-family: Poppins, 'sans-serif';
     font-weight: 500;
-    background-color: #8b7bd6; /* Adjust the shade if necessary */
+    background-color: #8ba4ff; /* Adjust the shade if necessary */
     color: rgb(255, 255, 255);
     padding: 10px 30px;
     border: none;
@@ -114,12 +114,12 @@ nav {
 }
 
 .primary-btn:hover {
-    background-color: #ad9ee9;
+    background-color: #216bff;
     transform: scale(1.05); /* 5% larger on hover */
 }
 
 .graphic-container {
-    width: 62%; /* Remaining 50% of space */
+    width: 48%; /* Remaining 50% of space */
     display: flex;
     align-items: center;
     justify-content: center;

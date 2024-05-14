@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Home</title>
+    <link rel="icon" type="image/x-icon" href="static/images/studdies_logo.ico">
+    <link rel="stylesheet" href="homepage.css">
+    <!-- Google Font Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <!-- Separated container for navigation -->
+        <div class="nav-container">
+            <!-- Logo, Brand Name, and Menu Toggle Button -->
+            <div class="brand">
+                <img src="static/images/studdies_logo.png" alt="Studdies Logo" class="logo-icon">
+                <span class="brand-name">Studdies</span>
+            </div>
+    
+            <!-- Hamburger Menu Button -->
+            <div class="hamburger" onclick="toggleDropdown()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
+    <!-- Rest of your page content -->
+
+    <!-- Main Content -->
+    <section class="main-content">
+        <!-- Separated container for main content -->
+        <div class="content-container">
+            <div class="welcome">
+                <h1>Welcome Christelle!</h1>
+                <div class="adjacent">
+                    <div class="class-dropdown" onclick="showModals">
+                        <label for="class-select">Select a class to search for studdies:</label>
+                        <select id="class-select" onchange="showModals(this.value)">
+                            <option value="class0"></option>
+                            <option value="class1">Class 1</option>
+                            <option value="class2">Class 2</option>
+                            <option value="class3">Class 3</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
+
+                    <div class="search-bar">
+                        <input type="text" id="searchInput" placeholder="Search...">
+                        <button onclick="search()">Search</button>
+                    </div>
+                </div>
+                <div class="class-content">
+                    <div id="class1-content" style="display: none;">
+                        <h2>Class 1 Content</h2>
+                        <p>This is the content for Class 1.</p>
+                    </div>
+        
+                    <div id="class2-content" style="display: none;">
+                        <h2>Class 2 Content</h2>
+                        <p>This is the content for Class 2.</p>
+                    </div>
+        
+                    <div id="class3-content" style="display: none;">
+                        <h2>Class 3 Content</h2>
+                        <p>This is the content for Class 3.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="homepage.js"></script>
+
+</body>
+</html>

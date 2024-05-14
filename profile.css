@@ -1,0 +1,131 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.profile-container {
+    background: #edf8fe;
+    padding: 20px 40px 40px; /* Adjust padding: top 20px, right 40px, bottom 40px, left 40px */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.profile-container h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.profile-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items at the start */
+    margin-bottom: 20px;
+}
+
+.left-column, .right-column {
+    width: 48%;
+}
+
+.image-upload {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.profile-img {
+    width: 215px;
+    height: 215px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid #8ba4ff;
+    display: block;
+    margin: 0 auto;
+}
+
+.image-upload label::after {
+    content: "Upload Image";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #8ba4ff;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.image-upload label.image-uploaded::after {
+    content: "";
+}
+
+.profile-form .form-group {
+    width: 100%;
+    margin-bottom: 15px;
+    text-align: left; /* Ensure form-group content is left-aligned */
+}
+
+.profile-form label {
+    display: block;
+    color: #333;
+    margin-bottom: 5px;
+    text-align: left; /* Left-align the labels */
+}
+
+.profile-form input[type="text"],
+.profile-form input[type="email"],
+.profile-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #8ba4ff;
+    border-radius: 5px;
+    font-family: Poppins, sans-serif;
+    font-size: 1rem;
+    color: #333;
+}
+
+.profile-form input::placeholder,
+.profile-form textarea::placeholder {
+    color: #aaa;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.submit-btn {
+    width: 200px;
+    padding: 10px;
+    background-color: #8ba4ff;
+    color: white;
+    border: 2px solid #8ba4ff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: Poppins, sans-serif;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.submit-btn:hover {
+    background-color: #216bff;
+}

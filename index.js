@@ -10,3 +10,12 @@ window.addEventListener('resize', function() {
         navLinks.classList.remove('active');
     }
 });
+
+const loadFile = (event) => {
+    const output = document.getElementById('profile-image');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = () => {
+        URL.revokeObjectURL(output.src); // free memory
+    };
+    document.querySelector('.image-upload label').classList.add('image-uploaded');
+};

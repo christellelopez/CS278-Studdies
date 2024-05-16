@@ -3,39 +3,30 @@ body {
     font-family: Poppins, sans-serif;
     margin: 0;
     padding: 0;
-    background-color:#f4f4f4
-}
-
-.container {
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row; /* By default (larger screens) */
+    background-color:#f4f4f4;
 }
 
 /* Navbar Styles */
 nav {
-    background-color: #ffffff; /* Or any color you prefer */
+    background-color: #ffffff;
     padding: 15px 0;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Adds shadow to navbar */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
     display: flex;
-    justify-content: space-between; /* Space out the brand, nav buttons, and profile links */
-    align-items: center; /* Center items vertically */
-    position: relative; /* To center the buttons in the navbar */
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
 }
 
 .brand {
     display: flex;
     align-items: center;
-    margin-left: 20px; /* Adjust as needed */
+    margin-left: 40px;
 }
 
 .nav-buttons-container {
     display: flex;
     justify-content: center;
-    flex-grow: 1; /* Allow this container to grow and center items */
+    flex-grow: 1;
 }
 
 .nav-buttons {
@@ -49,36 +40,35 @@ nav {
     font-family: Poppins, sans-serif;
     font-size: 16px;
     cursor: pointer;
-    color: #333; /* Or any color you prefer */
+    color: #333;
     padding: 10px 20px;
     transition: color 0.3s;
 }
 
 .nav-btn:hover {
-    color: #8ba4ff; /* Color on hover. Change as per your theme */
+    color: #8ba4ff;
 }
 
 .nav-btn.active {
     color: #8ba4ff;
 }
 
-
 .nav-links {
     display: flex;
     align-items: center;
-    margin-right: 20px; /* Adjust as needed */
+    margin-right: 40px;
 }
 
 .nav-links a {
     margin-left: 30px;
     font-weight: 400;
     text-decoration: none;
-    color: #333; /* Or any color you prefer */
+    color: #333;
     transition: color 0.3s;
 }
 
 .nav-links a:hover {
-    color: #8ba4ff; /* Color on hover. Change as per your theme */
+    color: #8ba4ff;
 }
 
 /* Media queries for smaller screens */
@@ -96,17 +86,17 @@ nav {
         position: absolute;
         top: 70px;
         right: 5%;
-        background-color: #f2f2f2; /* Changed background color to light grey */
+        background-color: #f2f2f2;
         flex-direction: column;
         gap: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         border-radius: 5px;
-        z-index: 1000; /* Ensures dropdown content is above other page content */
+        z-index: 1000;
     }
 
     .nav-links.active a {
-        text-align: center; /* Center aligns the text in dropdown */
-        margin-left: 15px; /* Add some padding to the left */
+        text-align: center;
+        margin-left: 15px;
         margin-right: 15px;
         margin-top: 5px;
         margin-bottom: 5px;
@@ -115,13 +105,10 @@ nav {
 
 .logo-icon {
     height: 50px;
-    width: 50px; /* Or adjust as needed */
-    margin-right: 13px; /* Spacing between logo icon and brand name */
+    width: 50px;
+    margin-right: 13px;
     border-radius: 10px;
 }
-
-
-
 
 @keyframes fadeIn {
     0% {
@@ -132,16 +119,52 @@ nav {
     }
 }
 
+.welcome {
+    margin-left: 80px;
+    text-align:left;
+}
+
+.welcome h1 {
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: #216bff;
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    animation: fadeIn 1s ease forwards;
+}
+
+.content-full-width {
+    width: 100%;
+    text-align: left;
+}
+
+.content-full-width .subheading {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #216bff;
+    margin-top: 70px;
+    margin-bottom: 10px;
+    margin-left: 85px;
+}
+
+.content-full-width .section-divider {
+    width: 90%;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
 .class-boxes {
     display: flex;
-    flex-direction: column; /* Change to column layout */
-    align-items: center;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 90%;
 }
 
 .class-box {
-    width: 80%; /* Adjust width as needed */
+    width: 48%;
     height: 150px;
     background-color: #8ba4ff;
     color: white;
@@ -154,143 +177,27 @@ nav {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: transform 0.3s, background-color 0.3s;
-    margin: 10px 0; /* Add margin between boxes */
+    margin-bottom: 20px;
 }
 
 .class-box:hover {
     background-color: #216bff;
-    transform: scale(1.05); /* Slightly enlarge on hover */
+    transform: scale(1.05);
 }
 
 .class-content {
-    overflow-y: auto;
-}
-
-
-.welcome h1 {
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: #216bff;
-    font-size: 4rem; 
-    font-weight: 400;
-    line-height: 1.3;
-    margin-bottom: 40px; 
-    animation: fadeIn 1s ease forwards;
-}
-
-.class-dropdown {
-    color: #8ba4ff;
+    display: none;
     width: 100%;
-    font-size: 1.7rem; 
-    font-weight: 50;
-    line-height: 1.3;
-    margin-bottom: 40px; 
-    display: flex;
-    flex-direction: row; /* Change flex-direction to row */
-    align-items: center; /* Align items vertically in case of height differences */
-    animation: fadeIn 1s ease forwards;
+    text-align: center;
+    padding: 20px 0;
 }
 
-.class-dropdown label {
-    padding-right: 10px;
+.class-section {
+    display: none;
 }
 
-/* Style for dropdown */
-.class-dropdown select {
-    width: 20%;
-    padding: 10px; /* Adjust padding as needed */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    color: #333;
-    background-color: #fff;
-    appearance: none; /* Removes default arrow */
-    -webkit-appearance: none; /* For older versions of Safari */
-    -moz-appearance: none; /* For older versions of Firefox */
-}
-
-/* Style for dropdown options */
-.class-dropdown select option {
-    background-color: #fff;
-    color: #333;
-}
-
-.class-content {
-    overflow-y: auto;
-}
-
-/*
-.adjacent {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-*/
-
-/* Add styles for search bar */
-.search-bar {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    margin-bottom: 20px; /* Adjust margin as needed */
-}
-
-.search-bar input[type="text"] {
-    width: 200px; /* Adjust width as needed */
-    padding: 10px; /* Adjust padding as needed */
-    margin-right: 10px; 
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    color: #333;
-}
-
-.search-bar button {
-    background-color: #8ba4ff; /* Adjust the shade if necessary */
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.search-bar button:hover {
-    background-color: #216bff;
-    transform: scale(1.05); /* 5% larger on hover */
-}
-
-
-.btn-group {
-    display: flex;
-    gap: 30px; /* Gap between the two buttons */
-    animation: fadeIn 1s ease forwards; 
-}
-
-.primary-btn {
-    font-family: Poppins, 'sans-serif';
-    font-weight: 500;
-    background-color: #8ba4ff; /* Adjust the shade if necessary */
-    color: rgb(255, 255, 255);
-    padding: 10px 30px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    text-decoration: none;
-}
-
-.primary-btn:hover {
-    background-color: #216bff;
-    transform: scale(1.05); /* 5% larger on hover */
-}
-
-/* Hamburger Menu Styles */
 .hamburger {
-    display: none; /* Hide by default */
+    display: none;
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
@@ -304,46 +211,30 @@ nav {
     border-radius: 2px;
 }
 
-/* Dropdown Active Styles */
 .nav-links.active {
     display: flex;
     position: absolute;
     top: 70px;
     right: 5%;
-    background-color: #f2f2f2;  /* Changed background color to light grey */
+    background-color: #f2f2f2;
     flex-direction: column;
     gap: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    z-index: 1000;  /* Ensures dropdown content is above other page content */
+    z-index: 1000;
 }
 
 .nav-links.active a {
-    text-align: center; /* Left aligns the text in dropdown */
-    margin-left: 15px; /* Add some padding to the left */
+    text-align: center;
+    margin-left: 15px;
     margin-right: 15px;
     margin-top: 5px;
     margin-bottom: 5px;
 }
 
-.nav-container, .content-container {
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row; /* By default (larger screens) */
-}
-
-.content-container {
-    width: 90%;
-    margin: 0 auto;
-    align-items: center;
-}
-
 @media only screen and (max-width: 1200px) {
     .intro h1 {
-        font-size: 3.4rem; 
+        font-size: 3.4rem;
     }
 
     .intro p {
@@ -355,7 +246,7 @@ nav {
         font-size: 0.9rem;
     }
 
-    .graphic-container{
+    .graphic-container {
         margin-top: 65px;
     }
 }
@@ -363,7 +254,7 @@ nav {
 /* For tablets and smaller desktops */
 @media only screen and (max-width: 1024px) {
     .intro h1 {
-        font-size: 2.6rem; 
+        font-size: 2.6rem;
     }
 
     .intro p {
@@ -375,7 +266,7 @@ nav {
         font-size: 0.8rem;
     }
 
-    .graphic-container{
+    .graphic-container {
         margin-top: 40px;
     }
 }
@@ -384,13 +275,13 @@ nav {
 @media only screen and (max-width: 1000px) {
     .nav-container {
         width: 80%;
-        flex-direction: row; /* Make sure the brand remains on the left and the hamburger on the right */
+        flex-direction: row;
     }
 
     .content-container {
         width: 80%;
         flex-direction: column;
-        text-align: center; 
+        text-align: center;
     }
 
     .nav-links {
@@ -413,7 +304,7 @@ nav {
     }
 
     .intro h1 {
-        font-size: 2.5rem; 
+        font-size: 2.5rem;
     }
 
     .intro p {
@@ -423,21 +314,21 @@ nav {
     .btn-group {
         flex-direction: column;
         gap: 15px;
-        text-align: center; /* Center the buttons */
-        padding-bottom: 20px; /* Space below the buttons */
+        text-align: center;
+        padding-bottom: 20px;
     }
 
     .primary-btn {
         width: 35%;
-        margin: 0 auto; /* To center align the buttons */
-        margin-bottom: 10px; /* Space between stacked buttons */
+        margin: 0 auto;
+        margin-bottom: 10px;
         box-sizing: border-box;
         font-size: 1rem;
     }
 
     .graphic-container {
-        margin-top: 0; 
-        margin-bottom: 30px; /* Space at the bottom of the image */
+        margin-top: 0;
+        margin-bottom: 30px;
     }
 
     .nav-links {
@@ -453,8 +344,8 @@ nav {
 @media only screen and (max-width: 768px) {
     .primary-btn {
         width: 35%;
-        margin: 0 auto; /* To center align the buttons */
-        margin-bottom: 10px; /* Space between stacked buttons */
+        margin: 0 auto;
+        margin-bottom: 10px;
         box-sizing: border-box;
         font-size: 0.85rem;
     }
@@ -495,21 +386,21 @@ nav {
     background-color: #fff;
     border-radius: 8px;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 90%;
     max-height: 90vh;
     overflow: auto;
-  }
-  
-  .modal img {
+}
+
+.modal img {
     max-width: 100%;
     height: auto;
     border-radius: 6px;
     object-fit: contain;
     overflow: hidden;
-  }
-  
-  .modal-button {
+}
+
+.modal-button {
     width: 250px;
     max-width: 100%;
     max-height: 100%;
@@ -517,75 +408,75 @@ nav {
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out;
     overflow: hidden;
     margin: 10px;
-  }
-  
-  .modal-button:hover {
+}
+
+.modal-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-  
-  .modal-button img {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-button img {
     width: 100%;
     height: auto;
     border-radius: 6px;
     object-fit: cover;
-  }
-  
-  .modal-buttons-container {
+}
+
+.modal-buttons-container {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-  }
-  
-  .modal-button .button-text {
+}
+
+.modal-button .button-text {
     font-size: 14px;
     line-height: 1.5;
-  }
-  
-  .modal-button .button-text strong {
+}
+
+.modal-button .button-text strong {
     font-weight: bold;
-  }
-  
-  .modal-button .button-text em {
+}
+
+.modal-button .button-text em {
     font-style: italic;
     font-weight: bold;
-  }
-  
-  .modal-text {
+}
+
+.modal-text {
     font-family: 'Poppins', sans-serif;
     margin-top: 10px;
     text-align: center;
-  }
-  
-  .modal-text p {
+}
+
+.modal-text p {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-  }
-  
-  .close {
+}
+
+.close {
     color: rgba(0, 0, 0, 0.6);
     float: right;
     font-size: 24px;
     font-weight: bold;
     cursor: pointer;
-  }
-  
-  .close:hover {
+}
+
+.close:hover {
     color: rgba(0, 0, 0, 0.8);
-  }
-  
-  .close:focus {
+}
+
+.close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
-  }
-  
-  .overlay {
+}
+
+.overlay {
     display: none;
     position: fixed;
     top: 0;
@@ -594,18 +485,18 @@ nav {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 999;
-  }
-  
-  .modal-content {
+}
+
+.modal-content {
     position: relative;
-  }
-  
-  .group-status-taken {
+}
+
+.group-status-taken {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     background-color: rgb(217, 55, 55);
     color: white;
-    padding: 10px; 
+    padding: 10px;
     border-radius: 10px;
     text-align: center;
     margin-top: 10px;
@@ -614,14 +505,14 @@ nav {
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-  }
-  
-  .group-status-free {
+}
+
+.group-status-free {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     background-color: rgb(69, 189, 79);
     color: white;
-    padding: 10px; 
+    padding: 10px;
     border-radius: 10px;
     text-align: center;
     margin-top: 10px;
@@ -630,13 +521,13 @@ nav {
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-  }
-    
-  .like-button {
+}
+
+.like-button {
     font-family: 'Poppins', sans-serif;
     border: 1px solid #333;
     color: rgb(12, 12, 12);
-    padding: 10px; 
+    padding: 10px;
     border-radius: 10px;
     text-align: center;
     margin-top: 5px;
@@ -646,14 +537,14 @@ nav {
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-  }
+}
 
-  .liked-button {
+.liked-button {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     background-color: rgb(142, 142, 142);
     color: rgb(255, 255, 255);
-    padding: 10px; 
+    padding: 10px;
     border-radius: 10px;
     text-align: center;
     margin-top: 5px;
@@ -663,7 +554,4 @@ nav {
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-  }
-
-
-
+}

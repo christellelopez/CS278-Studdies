@@ -34,8 +34,9 @@ function closeModal(modal) {
 
 // Function to show class people and hide the rest of the content
 function showClass(selectedClass) {
-    // Hide the welcome message and class boxes
+    // Hide the welcome message, Spring 2024 heading, and class boxes
     document.querySelector('.welcome').style.display = 'none';
+    document.querySelector('.content-full-width').style.display = 'none';
 
     // Hide all class contents
     var classSections = document.querySelectorAll('.class-section');
@@ -46,6 +47,7 @@ function showClass(selectedClass) {
     // Show the specific class content
     var selectedContent = document.getElementById(selectedClass + "-content");
     selectedContent.style.display = "block";
+    document.querySelector('.class-content').style.display = "block";
 
     // Update active state for nav buttons
     var navButtons = document.querySelectorAll('.nav-btn');

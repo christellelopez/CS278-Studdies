@@ -3,7 +3,7 @@ body {
     font-family: Poppins, sans-serif;
     margin: 0;
     padding: 0;
-    background-color:#ffffff
+    background-color:#f4f4f4
 }
 
 .container {
@@ -19,24 +19,54 @@ body {
 nav {
     background-color: #ffffff; /* Or any color you prefer */
     padding: 15px 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Adds shadow to navbar */
+    display: flex;
+    justify-content: space-between; /* Space out the brand, nav buttons, and profile links */
+    align-items: center; /* Center items vertically */
+    position: relative; /* To center the buttons in the navbar */
 }
 
 .brand {
     display: flex;
     align-items: center;
+    margin-left: 20px; /* Adjust as needed */
 }
 
-.logo-icon {
-    height: 40px;
-    width: 40px; /* Or adjust as needed */
-    margin-right: 13px; /* Spacing between logo icon and brand name */
-    border-radius: 10px;
+.nav-buttons-container {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1; /* Allow this container to grow and center items */
 }
 
-.brand-name {
-    font-weight: 600;
-    font-size: 28px; /* Adjust size as needed */
-    color: #333;
+.nav-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    color: #333; /* Or any color you prefer */
+    padding: 10px 20px;
+    transition: color 0.3s;
+}
+
+.nav-btn:hover {
+    color: #8ba4ff; /* Color on hover. Change as per your theme */
+}
+
+.nav-btn.active {
+    color: #8ba4ff;
+}
+
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Adjust as needed */
 }
 
 .nav-links a {
@@ -51,6 +81,47 @@ nav {
     color: #8ba4ff; /* Color on hover. Change as per your theme */
 }
 
+/* Media queries for smaller screens */
+@media only screen and (max-width: 1000px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links.active {
+        display: flex;
+        position: absolute;
+        top: 70px;
+        right: 5%;
+        background-color: #f2f2f2; /* Changed background color to light grey */
+        flex-direction: column;
+        gap: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        z-index: 1000; /* Ensures dropdown content is above other page content */
+    }
+
+    .nav-links.active a {
+        text-align: center; /* Center aligns the text in dropdown */
+        margin-left: 15px; /* Add some padding to the left */
+        margin-right: 15px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+}
+
+.logo-icon {
+    height: 50px;
+    width: 50px; /* Or adjust as needed */
+    margin-right: 13px; /* Spacing between logo icon and brand name */
+    border-radius: 10px;
+}
+
+
+
 
 @keyframes fadeIn {
     0% {
@@ -60,6 +131,41 @@ nav {
         opacity: 1;
     }
 }
+
+.class-boxes {
+    display: flex;
+    flex-direction: column; /* Change to column layout */
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.class-box {
+    width: 80%; /* Adjust width as needed */
+    height: 150px;
+    background-color: #8ba4ff;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    margin: 10px 0; /* Add margin between boxes */
+}
+
+.class-box:hover {
+    background-color: #216bff;
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.class-content {
+    overflow-y: auto;
+}
+
 
 .welcome h1 {
     -webkit-background-clip: text;

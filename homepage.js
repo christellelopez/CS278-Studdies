@@ -1,3 +1,8 @@
+// Function to go to the homepage
+function goHome() {
+    window.location.href = "homepage.html";
+}
+
 // Function to toggle the like button
 function toggleLike(button) {
     if (button.classList.contains("like-button")) {
@@ -27,20 +32,32 @@ function closeModal(modal) {
     overlay.style.display = "none";
 }
 
-// Function to show modals based on the selected class
-function showModals(selectedOption) {
-    // Show content for the selected class
-    var classes = ["class1", "class2", "class3"];
-    classes.forEach((c) => {
-        var selectedContent = document.getElementById(c + "-content");
-        if (selectedOption == c) {
-            selectedContent.style.display = "";
-        }
-        else {
-            selectedContent.style.display = "none";
-            console.log(selectedContent)
-        }
+// Function to show class people and hide the rest of the content
+function showClass(selectedClass) {
+    // Hide the welcome message and class boxes
+    document.querySelector('.welcome').style.display = 'none';
+
+    // Hide all class contents
+    var classSections = document.querySelectorAll('.class-section');
+    classSections.forEach(function(section) {
+        section.style.display = 'none';
     });
+
+    // Show the specific class content
+    var selectedContent = document.getElementById(selectedClass + "-content");
+    selectedContent.style.display = "block";
+
+    // Update active state for nav buttons
+    var navButtons = document.querySelectorAll('.nav-btn');
+    navButtons.forEach(function(button) {
+        button.classList.remove('active');
+    });
+    
+    // Add active state to the corresponding nav button
+    var activeButton = document.querySelector(`.nav-btn[onclick="showClass('${selectedClass}')"]`);
+    if (activeButton) {
+        activeButton.classList.add('active');
+    }
 }
 
 // Get references to the modals and overlay
@@ -50,6 +67,8 @@ var modal1class2 = document.getElementById("modal1-class2");
 var modal2class2 = document.getElementById("modal2-class2");
 var modal1class3 = document.getElementById("modal1-class3");
 var modal2class3 = document.getElementById("modal2-class3");
+var modal1class4 = document.getElementById("modal1-class4");
+var modal2class4 = document.getElementById("modal2-class4");
 var overlay = document.getElementById("overlay");
 
 // Get the button elements that open the modals
@@ -59,6 +78,8 @@ var btn1class2 = document.getElementById("btn1-class2");
 var btn2class2 = document.getElementById("btn2-class2");
 var btn1class3 = document.getElementById("btn1-class3");
 var btn2class3 = document.getElementById("btn2-class3");
+var btn1class4 = document.getElementById("btn1-class4");
+var btn2class4 = document.getElementById("btn2-class4");
 
 // Get the span elements that close the modals
 var close1 = modal1class1.querySelector(".close");
@@ -67,6 +88,8 @@ var close3 = modal1class2.querySelector(".close");
 var close4 = modal2class2.querySelector(".close");
 var close5 = modal1class3.querySelector(".close");
 var close6 = modal2class3.querySelector(".close");
+var close7 = modal1class4.querySelector(".close");
+var close8 = modal2class4.querySelector(".close");
 
 // When the user clicks on the button, open the modals
 btn1class1.onclick = function(event) {
@@ -86,6 +109,12 @@ btn1class3.onclick = function(event) {
 }
 btn2class3.onclick = function(event) {
     openModal(modal2class3, event);
+}
+btn1class4.onclick = function(event) {
+    openModal(modal1class4, event);
+}
+btn2class4.onclick = function(event) {
+    openModal(modal2class4, event);
 }
 
 // When the user clicks on <span> (x), close the modals
@@ -107,6 +136,12 @@ close5.onclick = function() {
 close6.onclick = function() {
     closeModal(modal2class3);
 }
+close7.onclick = function() {
+    closeModal(modal1class4);
+}
+close8.onclick = function() {
+    closeModal(modal2class4);
+}
 
 // When the user clicks anywhere outside of the modals, close them and hide the overlay
 window.onclick = function(event) {
@@ -117,14 +152,10 @@ window.onclick = function(event) {
         closeModal(modal2class2);
         closeModal(modal1class3);
         closeModal(modal2class3);
+        closeModal(modal1class4);
+        closeModal(modal2class4);
+        overlay.style.display = "none"; // Hide overlay
     }
-}
-
-// Function to search
-function search() {
-    var searchTerm = document.getElementById("searchInput").value;
-    // Perform actions based on the search term, such as filtering content or querying a database
-    console.log("Searching for:", searchTerm);
 }
 
 // Toggle like buttons
@@ -134,6 +165,3 @@ likeButtons.forEach(function(button) {
         toggleLike(event.target);
     });
 });
-
-// Call showModals initially to show content based on the selected class
-showModals("class0");

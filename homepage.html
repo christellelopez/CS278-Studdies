@@ -11,20 +11,29 @@
 </head>
 <body>
     <nav>
-        <!-- Separated container for navigation -->
-        <div class="nav-container">
-            <!-- Logo, Brand Name, and Menu Toggle Button -->
-            <div class="brand">
-                <img src="static/images/studdies_logo.png" alt="Studdies Logo" class="logo-icon">
-                <span class="brand-name">Studdies</span>
+        <div class="brand">
+            <img src="static/images/studdies_logo.png" alt="Studdies Logo" class="logo-icon">
+        </div>
+
+        <div class="nav-buttons-container">
+            <div class="nav-buttons">
+                <button class="nav-btn" onclick="goHome()">Home</button>
+                <button class="nav-btn" onclick="showClass('class1')">Class 1</button>
+                <button class="nav-btn" onclick="showClass('class2')">Class 2</button>
+                <button class="nav-btn" onclick="showClass('class3')">Class 3</button>
+                <button class="nav-btn" onclick="showClass('class4')">Class 4</button>
             </div>
-    
-            <!-- Hamburger Menu Button -->
-            <div class="hamburger" onclick="toggleDropdown()">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
+        </div>
+
+        <div class="nav-links">
+            <a href="#" class="nav-link">Your Profile</a>
+            <a href="#" class="nav-link">Log Out</a>
+        </div>
+
+        <div class="hamburger" onclick="toggleDropdown()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
         </div>
     </nav>
 
@@ -33,179 +42,226 @@
         <div class="content-container">
             <div class="welcome">
                 <h1>Welcome Christelle!</h1>
-                <div class="adjacent">
-                    <div class="class-dropdown" onclick="showModals">
-                        <label for="class-select">Select a class to search for studdies:</label>
-                        <select id="class-select" onchange="showModals(this.value)">
-                            <option value="class0"></option>
-                            <option value="class1">Class 1</option>
-                            <option value="class2">Class 2</option>
-                            <option value="class3">Class 3</option>
-                        </select>
+                <div class="class-boxes">
+                    <div class="class-box" onclick="showClass('class1')">
+                        <h2>Class 1</h2>
                     </div>
-
-                    <div class="search-bar">
-                        <input type="text" id="searchInput" placeholder="Search...">
-                        <button onclick="search()">Search</button>
+                    <div class="class-box" onclick="showClass('class2')">
+                        <h2>Class 2</h2>
+                    </div>
+                    <div class="class-box" onclick="showClass('class3')">
+                        <h2>Class 3</h2>
+                    </div>
+                    <div class="class-box" onclick="showClass('class4')">
+                        <h2>Class 4</h2>
                     </div>
                 </div>
-                <div class="class-content">
-                    <div id="class1-content" style="display: none;">
-                        <h2>Class 1 People</h2>
-                        <div class="modal-buttons-container">
-                            <button id="btn1-class1" class="modal-button">
-                                <img src="static/images/baekhyun.jpg" alt="Preview of the image">
-                                <div class="like-button">Like</div>
-                                <span class="button-text">
-                                    <strong>Byun Baekhyun</strong><br>
-                                    Senior 2025<br>
-                                    <em>About Me:</em> I have a corgi. I love him.
-                                </span>
-                                <div class="group-status-free">Need Partner</div>
-                            </button>
-                    
-                            <button id="btn2-class1" class="modal-button">
-                                <img src="static/images/kyungsoo.png" alt="Preview of the image">
-                                <div class="like-button">Like</div>
-                                <span class="button-text">
-                                    <strong>Doh Kyungsoo</strong><br>
-                                    Junior 2025<br>
-                                    <em>About Me:</em> RnB only
-                                </span>
-                                <div class="group-status-taken">Has Partner</div>
-                            </button>
-                        </div>
-                        <div id="modal1-class1" class="modal">
-                            <div class="modal-content">
-                                <span class="close">&times;</span>
-                                <img src="static/images/baekhyun.jpg" alt="Description of the image">
-                                <div class="like-button">Like</div>
-                                <div class="modal-text">
-                                    <strong>Byun Baekhyun</strong><br>
-                                    Senior 2025<br>
-                                    <em>About Me:</em> I have a corgi. I love him.
-                                </div>
-                                <div class="group-status-free">Need Partner</div>
+            </div>
+            <div class="class-content">
+                <div id="class1-content" class="class-section" style="display: none;">
+                    <h2>Class 1 People</h2>
+                    <div class="modal-buttons-container">
+                        <button id="btn1-class1" class="modal-button">
+                            <img src="static/images/baekhyun.jpg" alt="Preview of the image">
+                            <div class="like-button">Like</div>
+                            <span class="button-text">
+                                <strong>Byun Baekhyun</strong><br>
+                                Senior 2025<br>
+                                <em>About Me:</em> I have a corgi. I love him.
+                            </span>
+                            <div class="group-status-free">Need Partner</div>
+                        </button>
+                        <button id="btn2-class1" class="modal-button">
+                            <img src="static/images/kyungsoo.png" alt="Preview of the image">
+                            <div class="like-button">Like</div>
+                            <span class="button-text">
+                                <strong>Doh Kyungsoo</strong><br>
+                                Junior 2025<br>
+                                <em>About Me:</em> RnB only
+                            </span>
+                            <div class="group-status-taken">Has Partner</div>
+                        </button>
+                    </div>
+                    <div id="modal1-class1" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <img src="static/images/baekhyun.jpg" alt="Description of the image">
+                            <div class="like-button">Like</div>
+                            <div class="modal-text">
+                                <strong>Byun Baekhyun</strong><br>
+                                Senior 2025<br>
+                                <em>About Me:</em> I have a corgi. I love him.
                             </div>
-                        </div>
-                        <div id="modal2-class1" class="modal">
-                            <div class="modal-content">
-                                <span class="close">&times;</span>
-                                <img src="static/images/kyungsoo.png" alt="Description of the image">
-                                <div class="like-button">Like</div>
-                                <div class="modal-text">
-                                    <strong>Doh Kyungsoo</strong><br>
-                                    Junior 2025<br>
-                                    <em>About Me:</em> RnB only
-                                </div>
-                                <div class="group-status-taken">Has Partner</div>
-                            </div>
+                            <div class="group-status-free">Need Partner</div>
                         </div>
                     </div>
-        
-                    <div id="class2-content" style="display: none;">
-                        <h2>Class 2 People</h2>
-                        <div class="modal-buttons-container">
-                            <button id="btn1-class2" class="modal-button">
-                                <img src="static/images/kai.jpeg" alt="Preview of the image">
-                                <div class="like-button">Like</div>
-                                <span class="button-text">
-                                    <strong>Kim Jongin</strong><br>
-                                    Senior 2025<br>
-                                    <em>About Me:</em> Dancing is my passion.
-                                </span>
-                                <div class="group-status-free">Need Partner</div>
-                            </button>
-                    
-                            <button id="btn2-class2" class="modal-button">
-                                <img src="static/images/kyungsoo.png" alt="Preview of the image">
-                                <div class="like-button">Like</div>
-                                <span class="button-text">
-                                    <strong>Doh Kyungsoo</strong><br>
-                                    Junior 2025<br>
-                                    <em>About Me:</em> RnB only
-                                </span>
-                                <div class="group-status-taken">Has Partner</div>
-                            </button>
-                        </div>
-                        <div id="modal1-class2" class="modal">
-                            <div class="modal-content">
-                                <span class="close">&times;</span>
-                                <img src="static/images/kai.jpeg" alt="Description of the image">
-                                <div class="like-button">Like</div>
-                                <div class="modal-text">
-                                    <strong>Kim Jongin</strong><br>
-                                    Senior 2025<br>
-                                    <em>About Me:</em> Dancing is my passion.
-                                </div>
-                                <div class="group-status-free">Need Partner</div>
+                    <div id="modal2-class1" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <img src="static/images/kyungsoo.png" alt="Description of the image">
+                            <div class="like-button">Like</div>
+                            <div class="modal-text">
+                                <strong>Doh Kyungsoo</strong><br>
+                                Junior 2025<br>
+                                <em>About Me:</em> RnB only
                             </div>
-                        </div>
-                        <div id="modal2-class2" class="modal">
-                            <div class="modal-content">
-                                <span class="close">&times;</span>
-                                <img src="static/images/kyungsoo.png" alt="Description of the image">
-                                <div class="like-button">Like</div>
-                                <div class="modal-text">
-                                    <strong>Doh Kyungsoo</strong><br>
-                                    Junior 2025<br>
-                                    <em>About Me:</em> RnB only
-                                </div>
-                                <div class="group-status-taken">Has Partner</div>
-                            </div>
+                            <div class="group-status-taken">Has Partner</div>
                         </div>
                     </div>
-        
-                    <div id="class3-content" style="display: none;">
-                        <h2>Class 3 People</h2>
-                        <div class="modal-buttons-container">
-                            <button id="btn1-class3" class="modal-button">
-                                <img src="static/images/baekhyun.jpg" alt="Preview of the image">
-                                <div class="like-button">Like</div>
-                                <span class="button-text">
-                                    <strong>Byun Baekhyun</strong><br>
-                                    Senior 2025<br>
-                                    <em>About Me:</em> I have a corgi. I love him.
-                                </span>
-                                <div class="group-status-free">Need Partner</div>
-                            </button>
-                    
-                            <button id="btn2-class3" class="modal-button">
-                                <img src="static/images/kyungsoo.png" alt="Preview of the image">
-                                <div class="like-button">Like</div>
-                                <span class="button-text">
-                                    <strong>Doh Kyungsoo</strong><br>
-                                    Junior 2025<br>
-                                    <em>About Me:</em> RnB only
-                                </span>
-                                <div class="group-status-taken">Has Partner</div>
-                            </button>
-                        </div>
-                        <div id="modal1-class3" class="modal">
-                            <div class="modal-content">
-                                <span class="close">&times;</span>
-                                <img src="static/images/baekhyun.jpg" alt="Description of the image">
-                                <div class="like-button">Like</div>
-                                <div class="modal-text">
-                                    <strong>Byun Baekhyun</strong><br>
-                                    Senior 2025<br>
-                                    <em>About Me:</em> I have a corgi. I love him.
-                                </div>
-                                <div class="group-status-free">Need Partner</div>
+                </div>
+
+                <div id="class2-content" class="class-section" style="display: none;">
+                    <h2>Class 2 People</h2>
+                    <div class="modal-buttons-container">
+                        <button id="btn1-class2" class="modal-button">
+                            <img src="static/images/kai.jpeg" alt="Preview of the image">
+                            <div class="like-button">Like</div>
+                            <span class="button-text">
+                                <strong>Kim Jongin</strong><br>
+                                Senior 2025<br>
+                                <em>About Me:</em> Dancing is my passion.
+                            </span>
+                            <div class="group-status-free">Need Partner</div>
+                        </button>
+                        <button id="btn2-class2" class="modal-button">
+                            <img src="static/images/kyungsoo.png" alt="Preview of the image">
+                            <div class="like-button">Like</div>
+                            <span class="button-text">
+                                <strong>Doh Kyungsoo</strong><br>
+                                Junior 2025<br>
+                                <em>About Me:</em> RnB only
+                            </span>
+                            <div class="group-status-taken">Has Partner</div>
+                        </button>
+                    </div>
+                    <div id="modal1-class2" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <img src="static/images/kai.jpeg" alt="Description of the image">
+                            <div class="like-button">Like</div>
+                            <div class="modal-text">
+                                <strong>Kim Jongin</strong><br>
+                                Senior 2025<br>
+                                <em>About Me:</em> Dancing is my passion.
                             </div>
+                            <div class="group-status-free">Need Partner</div>
                         </div>
-                        <div id="modal2-class3" class="modal">
-                            <div class="modal-content">
-                                <span class="close">&times;</span>
-                                <img src="static/images/kyungsoo.png" alt="Description of the image">
-                                <div class="like-button">Like</div>
-                                <div class="modal-text">
-                                    <strong>Doh Kyungsoo</strong><br>
-                                    Junior 2025<br>
-                                    <em>About Me:</em> RnB only
-                                </div>
-                                <div class="group-status-taken">Has Partner</div>
+                    </div>
+                    <div id="modal2-class2" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <img src="static/images/kyungsoo.png" alt="Description of the image">
+                            <div class="like-button">Like</div>
+                            <div class="modal-text">
+                                <strong>Doh Kyungsoo</strong><br>
+                                Junior 2025<br>
+                                <em>About Me:</em> RnB only
                             </div>
+                            <div class="group-status-taken">Has Partner</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="class3-content" class="class-section" style="display: none;">
+                    <h2>Class 3 People</h2>
+                    <div class="modal-buttons-container">
+                        <button id="btn1-class3" class="modal-button">
+                            <img src="static/images/baekhyun.jpg" alt="Preview of the image">
+                            <div class="like-button">Like</div>
+                            <span class="button-text">
+                                <strong>Byun Baekhyun</strong><br>
+                                Senior 2025<br>
+                                <em>About Me:</em> I have a corgi. I love him.
+                            </span>
+                            <div class="group-status-free">Need Partner</div>
+                        </button>
+                        <button id="btn2-class3" class="modal-button">
+                            <img src="static/images/kyungsoo.png" alt="Preview of the image">
+                            <div class="like-button">Like</div>
+                            <span class="button-text">
+                                <strong>Doh Kyungsoo</strong><br>
+                                Junior 2025<br>
+                                <em>About Me:</em> RnB only
+                            </span>
+                            <div class="group-status-taken">Has Partner</div>
+                        </button>
+                    </div>
+                    <div id="modal1-class3" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <img src="static/images/baekhyun.jpg" alt="Description of the image">
+                            <div class="like-button">Like</div>
+                            <div class="modal-text">
+                                <strong>Byun Baekhyun</strong><br>
+                                Senior 2025<br>
+                                <em>About Me:</em> I have a corgi. I love him.
+                            </div>
+                            <div class="group-status-free">Need Partner</div>
+                        </div>
+                    </div>
+                    <div id="modal2-class3" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <img src="static/images/kyungsoo.png" alt="Description of the image">
+                            <div class="like-button">Like</div>
+                            <div class="modal-text">
+                                <strong>Doh Kyungsoo</strong><br>
+                                Junior 2025<br>
+                                <em>About Me:</em> RnB only
+                            </div>
+                            <div class="group-status-taken">Has Partner</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="class4-content" class="class-section" style="display: none;">
+                    <h2>Class 4 People</h2>
+                    <div class="modal-buttons-container">
+                        <button id="btn1-class4" class="modal-button">
+                            <img src="static/images/person4.jpg" alt="Preview of the image">
+                            <div class="like-button">Like</div>
+                            <span class="button-text">
+                                <strong>Person Four</strong><br>
+                                Senior 2025<br>
+                                <em>About Me:</em> Loves coding.
+                            </span>
+                            <div class="group-status-free">Need Partner</div>
+                        </button>
+                        <button id="btn2-class4" class="modal-button">
+                            <img src="static/images/person5.jpg" alt="Preview of the image">
+                            <div class="like-button">Like</div>
+                            <span class="button-text">
+                                <strong>Person Five</strong><br>
+                                Junior 2025<br>
+                                <em>About Me:</em> Enjoys hiking.
+                            </span>
+                            <div class="group-status-taken">Has Partner</div>
+                        </button>
+                    </div>
+                    <div id="modal1-class4" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <img src="static/images/person4.jpg" alt="Description of the image">
+                            <div class="like-button">Like</div>
+                            <div class="modal-text">
+                                <strong>Person Four</strong><br>
+                                Senior 2025<br>
+                                <em>About Me:</em> Loves coding.
+                            </div>
+                            <div class="group-status-free">Need Partner</div>
+                        </div>
+                    </div>
+                    <div id="modal2-class4" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <img src="static/images/person5.jpg" alt="Description of the image">
+                            <div class="like-button">Like</div>
+                            <div class="modal-text">
+                                <strong>Person Five</strong><br>
+                                Junior 2025<br>
+                                <em>About Me:</em> Enjoys hiking.
+                            </div>
+                            <div class="group-status-taken">Has Partner</div>
                         </div>
                     </div>
                 </div>
@@ -216,6 +272,5 @@
     <div class="overlay" id="overlay"></div>
 
     <script src="homepage.js"></script>
-
 </body>
 </html>

@@ -9,7 +9,73 @@ function resizeModalImages() {
 }
 
 // Call the function when the document is ready
-document.addEventListener('DOMContentLoaded', resizeModalImages);
+document.addEventListener('DOMContentLoaded', function() {
+    resizeModalImages();
+
+    // Get references to the modals and overlay
+    var modals = {
+        'class1': [document.getElementById("modal1-class1"), document.getElementById("modal2-class1"), document.getElementById("modal3-class1")],
+        'class2': [document.getElementById("modal1-class2"), document.getElementById("modal2-class2")],
+        'class3': [document.getElementById("modal1-class3"), document.getElementById("modal2-class3")],
+        'class4': [document.getElementById("modal1-class4"), document.getElementById("modal2-class4")]
+    };
+    var overlay = document.getElementById("overlay");
+
+    var buttons = {
+        'class1': [document.getElementById("btn1-class1"), document.getElementById("btn2-class1"), document.getElementById("btn3-class1")],
+        'class2': [document.getElementById("btn1-class2"), document.getElementById("btn2-class2")],
+        'class3': [document.getElementById("btn1-class3"), document.getElementById("btn2-class3")],
+        'class4': [document.getElementById("btn1-class4"), document.getElementById("btn2-class4")]
+    };
+
+    // Function to filter names within a class
+    function filterNames(className) {
+        var input, filter, buttons, buttonText, i, txtValue;
+        input = document.getElementById('search-' + className);
+        filter = input.value.toUpperCase();
+        buttons = document.querySelectorAll('#' + className + '-content .modal-button');
+
+        for (i = 0; i < buttons.length; i++) {
+            buttonText = buttons[i].querySelector('.button-text');
+            txtValue = buttonText.textContent || buttonText.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                buttons[i].style.display = "";
+            } else {
+                buttons[i].style.display = "none";
+            }
+        }
+    }
+
+    // When the user clicks on the button, open the modals
+    for (var className in buttons) {
+        buttons[className].forEach((button, index) => {
+            button.onclick = function(event) {
+                openModal(modals[className][index], event);
+            }
+        });
+    }
+
+    // When the user clicks anywhere outside of the modals, close them and hide the overlay
+    window.onclick = function(event) {
+        if (event.target == overlay) {
+            for (var className in modals) {
+                modals[className].forEach(modal => closeModal(modal));
+            }
+            overlay.style.display = "none"; // Hide overlay
+        }
+    }
+
+    // Toggle connect buttons
+    var connectButtons = document.querySelectorAll('.connect-button');
+    connectButtons.forEach(function(button) {
+        button.addEventListener('click', function(event) {
+            toggleLike(event.target);
+        });
+    });
+
+    // Expose filterNames function globally
+    window.filterNames = filterNames;
+});
 
 // Function to go to the homepage
 function goHome() {
@@ -74,6 +140,7 @@ function showClass(selectedClass) {
         activeButton.classList.add('active');
     }
 }
+
 
 // Get references to the modals and overlay
 var modal1class1 = document.getElementById("modal1-class1");

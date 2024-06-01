@@ -76,8 +76,17 @@
             <div id="class1-content" class="class-section" style="display: none;">
                 <div class="search-bar">
                     <input type="text" placeholder="Search Class 1..." id="search-class1" onkeyup="filterNames('class1')">
+                    <select id="filter-class1" onchange="filterNames('class1')">
+                        <option value="">All</option>
+                        <option value="Coding">Skill: Coding</option>
+                        <option value="Senior">Year: Senior</option>
+                        <option value="Junior">Year: Junior</option>
+                        <option value="Need Partner">Status: Need Partner</option>
+                        <option value="Has Partner">Status: Has Partner</option>
+                    </select>
                     <button onclick="searchClass('class1')">Search</button>
                 </div>
+                
                 <h2>Class 1 People</h2>
                 <div class="modal-buttons-container">
                     <button id="btn1-class1" class="modal-button">
@@ -86,6 +95,7 @@
                         <span class="button-text">
                             <strong>Byun Baekhyun</strong><br>
                             Senior 2025<br>
+                            <em>Skill:</em> Coding<br>
                             <em>About Me:</em> I have a corgi. I love him.
                         </span>
                         <div class="status-badge free">Need Partner</div>
@@ -96,6 +106,7 @@
                         <span class="button-text">
                             <strong>Doh Kyungsoo</strong><br>
                             Junior 2025<br>
+                            <em>Skill:</em> Coding<br>
                             <em>About Me:</em> RnB only
                         </span>
                         <div class="status-badge taken">Has Partner</div>
@@ -106,6 +117,7 @@
                         <span class="button-text">
                             <strong>Doh Kyungsoo</strong><br>
                             Junior 2025<br>
+                            <em>Skill:</em> Coding<br>
                             <em>About Me:</em> RnB only
                         </span>
                         <div class="status-badge taken">Has Partner</div>
@@ -118,7 +130,8 @@
                         <div class="modal-text">
                             <strong>Byun Baekhyun</strong><br>
                             Senior 2025<br>
-                            <em>About Me:</em> I have a corgi. I love him.
+                            <em>Skill:</em> Coding<br>
+                            <em>About Me:</em> I have a corgi. I love him. 
                         </div>
                         <div class="status-badge free">Need Partner</div>
                     </div>
@@ -130,6 +143,7 @@
                         <div class="modal-text">
                             <strong>Doh Kyungsoo</strong><br>
                             Junior 2025<br>
+                            <em>Skill:</em> Coding<br>
                             <em>About Me:</em> RnB only
                         </div>
                         <div class="status-badge taken">Has Partner</div>
@@ -142,6 +156,7 @@
                         <div class="modal-text">
                             <strong>Doh Kyungsoo</strong><br>
                             Junior 2025<br>
+                            <em>Skill:</em> Coding<br>
                             <em>About Me:</em> RnB only
                         </div>
                         <div class="status-badge taken">Has Partner</div>
@@ -162,6 +177,7 @@
                         <span class="button-text">
                             <strong>Kim Jongin</strong><br>
                             Senior 2025<br>
+                            <em>Skill:</em> Coding<br>
                             <em>About Me:</em> Dancing is my passion.
                         </span>
                         <div class="group-status-free">Need Partner</div>
@@ -172,6 +188,7 @@
                         <span class="button-text">
                             <strong>Doh Kyungsoo</strong><br>
                             Junior 2025<br>
+                            <em>Skill:</em> Coding<br>
                             <em>About Me:</em> RnB only
                         </span>
                         <div class="group-status-taken">Has Partner</div>
@@ -184,6 +201,7 @@
                         <div class="modal-text">
                             <strong>Kim Jongin</strong><br>
                             Senior 2025<br>
+                            <em>Skill:</em> Coding<br>
                             <em>About Me:</em> Dancing is my passion.
                         </div>
                         <div class="status-badge free">Need Partner</div>
@@ -196,6 +214,7 @@
                         <div class="modal-text">
                             <strong>Doh Kyungsoo</strong><br>
                             Junior 2025<br>
+                            <em>Skill:</em> Coding<br>
                             <em>About Me:</em> RnB only
                         </div>
                         <div class="status-badge taken">Has Partner</div>
@@ -216,6 +235,7 @@
                         <span class="button-text">
                             <strong>Byun Baekhyun</strong><br>
                             Senior 2025<br>
+                            <em>Skill:</em> Coding<br>
                             <em>About Me:</em> I have a corgi. I love him.
                         </span>
                         <div class="group-status-free">Need Partner</div>
@@ -226,6 +246,7 @@
                         <span class="button-text">
                             <strong>Doh Kyungsoo</strong><br>
                             Junior 2025<br>
+                            <em>Skill:</em> Coding<br>
                             <em>About Me:</em> RnB only
                         </span>
                         <div class="group-status-taken">Has Partner</div>
@@ -238,6 +259,7 @@
                         <div class="modal-text">
                             <strong>Byun Baekhyun</strong><br>
                             Senior 2025<br>
+                            <em>Skill:</em> Coding<br>
                             <em>About Me:</em> I have a corgi. I love him.
                         </div>
                         <div class="status-badge free">Need Partner</div>
@@ -250,6 +272,7 @@
                         <div class="modal-text">
                             <strong>Doh Kyungsoo</strong><br>
                             Junior 2025<br>
+                            <em>Skill:</em> Coding<br>
                             <em>About Me:</em> RnB only
                         </div>
                         <div class="status-badge taken">Has Partner</div>
@@ -270,6 +293,7 @@
                         <span class="button-text">
                             <strong>Person Four</strong><br>
                             Senior 2025<br>
+                            <em>Skill:</em> Coding<br>
                             <em>About Me:</em> Loves coding.
                         </span>
                         <div class="group-status-free">Need Partner</div>
@@ -280,6 +304,7 @@
                         <span class="button-text">
                             <strong>Person Five</strong><br>
                             Junior 2025<br>
+                            <em>Skill:</em> Coding<br>
                             <em>About Me:</em> Enjoys hiking.
                         </span>
                         <div class="group-status-taken">Has Partner</div>
@@ -292,6 +317,7 @@
                         <div class="modal-text">
                             <strong>Person Four</strong><br>
                             Senior 2025<br>
+                            <em>Skill:</em> Coding<br>
                             <em>About Me:</em> Loves coding.
                         </div>
                         <div class="status-badge free">Need Partner</div>
@@ -304,6 +330,7 @@
                         <div class="modal-text">
                             <strong>Person Five</strong><br>
                             Junior 2025<br>
+                            <em>Skill:</em> Coding<br>
                             <em>About Me:</em> Enjoys hiking.
                         </div>
                         <div class="status-badge taken">Has Partner</div>

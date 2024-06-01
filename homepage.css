@@ -210,19 +210,26 @@ nav {
     justify-content: center;
     align-items: center;
     margin-bottom: 50px;
+    gap: 10px;
 }
 
 .search-bar input[type="text"] {
-    width: 400px;
+    width: 300px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-    margin-right: 10px;
+}
+
+.search-bar select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
 .search-bar button {
-    background-color: #8ba4ff;
+    background-color: var(--main-color);
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -233,9 +240,10 @@ nav {
 }
 
 .search-bar button:hover {
-    background-color: #216bff;
+    background-color: var(--secondary-color);
     transform: scale(1.05);
 }
+
 
 .hamburger {
     display: none;
@@ -442,7 +450,7 @@ nav {
 }
 
 .modal-button {
-    width: 250px;
+    width: 300px;
     max-width: 100%;
     max-height: 100%;
     background-color: #fff;
@@ -656,3 +664,4 @@ nav {
 .status-badge.taken {
     background-color: rgb(217, 55, 55);
 }
+

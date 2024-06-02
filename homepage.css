@@ -209,33 +209,83 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+    gap: 10px;
 }
 
-.search-bar input[type="text"] {
-    width: 400px;
-    padding: 10px;
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-container input[type="text"] {
+    width: 300px;
+    padding: 10px 15px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 25px; /* More rounded corners */
     font-size: 16px;
-    margin-right: 10px;
+    padding-left: 35px; /* Add padding to the left to make space for the icon */
+    box-shadow: none; /* Remove the default box-shadow */
+    outline: none; /* Remove default outline */
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.search-bar button {
-    background-color: #8ba4ff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
+.search-container input[type="text"]:focus {
+    border-color: var(--main-color);
+    box-shadow: 0 0 5px var(--main-color);
 }
 
-.search-bar button:hover {
-    background-color: #216bff;
-    transform: scale(1.05);
+.search-icon {
+    position: absolute;
+    left: 10px;
+    font-size: 16px;
+    color: #ccc;
 }
+
+.search-bar select {
+    height: 40px; /* Align with input height */
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Slightly rounded corners */
+    font-size: 16px;
+    outline: none; /* Remove default outline */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.search-bar select:focus {
+    border-color: var(--main-color);
+    box-shadow: 0 0 5px var(--main-color);
+}
+
+.no-results {
+    display: none;
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+    margin-top: 20px;
+    margin-bottom: 20px; /* Provide space for the graphic */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.no-results img {
+    max-width: 200px; /* Increase the size of the image */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.no-results p {
+    font-size: 20px;
+    color: #333;
+    max-width: 600px; /* Constrain the width of the text */
+    margin: 0 auto; /* Center the text */
+    padding: 0 20px; /* Add some padding for better readability */
+}
+
+
 
 .hamburger {
     display: none;
@@ -442,7 +492,7 @@ nav {
 }
 
 .modal-button {
-    width: 250px;
+    width: 300px;
     max-width: 100%;
     max-height: 100%;
     background-color: #fff;
@@ -656,3 +706,4 @@ nav {
 .status-badge.taken {
     background-color: rgb(217, 55, 55);
 }
+

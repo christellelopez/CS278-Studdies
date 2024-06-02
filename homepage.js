@@ -150,3 +150,38 @@ connectButtons.forEach(function(button) {
         toggleLike(event.target);
     });
 });
+
+function filterNames(className) {
+    const searchInput = document.getElementById(`search-${className}`).value.toLowerCase();
+    const filterValue = document.getElementById(`filter-${className}`).value.toLowerCase();
+    
+    const buttons = document.querySelectorAll(`#${className}-content .modal-button`);
+    let hasResults = false;
+
+    buttons.forEach(button => {
+        const nameText = button.querySelector('.button-text strong').textContent.toLowerCase();
+        const skillText = button.querySelector('.button-text em').textContent.toLowerCase();
+        const yearText = button.querySelector('.button-text').innerHTML.toLowerCase().includes('senior') ? 'senior' : 'junior';
+        const statusText = button.querySelector('.status-badge').textContent.toLowerCase();
+
+        let matchesSearch = !searchInput || nameText.includes(searchInput);
+        let matchesFilter = !filterValue || 
+            skillText.includes(filterValue) || 
+            yearText.includes(filterValue) || 
+            statusText.includes(filterValue);
+
+        if (matchesSearch && matchesFilter) {
+            button.style.display = 'block';
+            hasResults = true;
+        } else {
+            button.style.display = 'none';
+        }
+    });
+
+    const noResults = document.getElementById(`no-results-${className}`);
+    if (hasResults) {
+        noResults.style.display = 'none';
+    } else {
+        noResults.style.display = 'block';
+    }
+}

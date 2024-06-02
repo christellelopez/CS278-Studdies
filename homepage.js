@@ -51,6 +51,15 @@ function showClass(selectedClass) {
     document.querySelector('.welcome').style.display = 'none';
     document.querySelector('.content-full-width').style.display = 'none';
 
+    // Hide the expectations box
+    var expectationsBox = document.querySelector('.right-content');
+    if (expectationsBox) {
+        expectationsBox.style.display = 'none';
+    }
+
+    // Expand the left-content to full width
+    document.querySelector('.left-content').classList.add('full-width');
+
     // Hide all class contents
     var classSections = document.querySelectorAll('.class-section');
     classSections.forEach(function(section) {

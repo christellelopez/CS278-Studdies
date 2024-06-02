@@ -194,3 +194,35 @@ function filterNames(className) {
         noResults.style.display = 'block';
     }
 }
+
+// Function to open mailto link
+function openMail(email) {
+    window.location.href = `mailto:${email}`;
+}
+
+// Function to open the report confirmation modal
+function openReportModal() {
+    document.getElementById('reportModal').style.display = 'block';
+}
+
+// Function to close the report confirmation modal
+function closeReportModal() {
+    document.getElementById('reportModal').style.display = 'none';
+}
+
+// Function to handle report confirmation
+function confirmReport() {
+    alert('The user has been reported for inappropriate conduct.');
+    closeReportModal();
+}
+
+// Function to show the friend added popup
+function addFriend() {
+    var popup = document.getElementById('friendPopup');
+    popup.style.display = 'block';
+    setTimeout(function() {
+        popup.style.display = 'none';
+    }, 3000);
+}
+
+

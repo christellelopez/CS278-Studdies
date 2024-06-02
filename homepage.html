@@ -129,23 +129,43 @@
                         <img src="static/images/no-result.png" alt="No results found">
                         <p>Sorry! It seems like no students can be found with that match. Reach out to us <a href="mailto:support@example.com" style="color: inherit; text-decoration: underline;">here</a> and we'll get to finding your perfect study buddies.</p>
                     </div>
-                    <div id="modal1-class1" class="modal">
+                    <div class="modal" id="modal1-class1">
                         <div class="modal-content">
                             <img src="static/images/baekhyun.jpg" alt="Description of the image" class="modal-image">
-                            <div class="connect-button">Connect</div>
+                            <div class="icon-buttons">
+                                <button class="icon-button" onclick="addFriend()">
+                                    <img src="static/images/add-friend.png" alt="Add Friend Icon" class="icon">
+                                </button>
+                                <button class="icon-button" onclick="openMail('student@example.com')">
+                                    <img src="static/images/mail.png" alt="Email Icon" class="icon">
+                                </button>
+                                <button class="icon-button flag-icon" onclick="openReportModal()">
+                                    <img src="static/images/report.png" alt="Flag Icon" class="icon">
+                                </button>
+                            </div>
                             <div class="modal-text">
                                 <strong>Byun Baekhyun</strong><br>
                                 Senior 2025<br>
                                 <em>Skill:</em> Coding<br>
-                                <em>About Me:</em> I have a corgi. I love him. 
+                                <em>About Me:</em> I have a corgi. I love him.
                             </div>
                             <div class="status-badge free">Need Partner</div>
                         </div>
-                    </div>
+                    </div>                       
                     <div id="modal2-class1" class="modal">
                         <div class="modal-content">
                             <img src="static/images/kyungsoo.png" alt="Description of the image" class="modal-image">
-                            <div class="connect-button">Connect</div>
+                            <div class="icon-buttons">
+                                <button class="icon-button" onclick="openMail('student@example.com')">
+                                    <img src="static/images/add-friend.png" alt="Add Friend Icon" class="icon">
+                                </button>
+                                <button class="icon-button" onclick="openMail('student@example.com')">
+                                    <img src="static/images/mail.png" alt="Email Icon" class="icon">
+                                </button>
+                                <button class="icon-button flag-icon" onclick="openReportModal()">
+                                    <img src="static/images/report.png" alt="Flag Icon" class="icon">
+                                </button>
+                            </div>
                             <div class="modal-text">
                                 <strong>Doh Kyungsoo</strong><br>
                                 Junior 2025<br>
@@ -158,7 +178,17 @@
                     <div id="modal3-class1" class="modal">
                         <div class="modal-content">
                             <img src="static/images/kyungsoo.png" alt="Description of the image" class="modal-image">
-                            <div class="connect-button">Connect</div>
+                            <div class="icon-buttons">
+                                <button class="icon-button" onclick="openMail('student@example.com')">
+                                    <img src="static/images/add-friend.png" alt="Add Friend Icon" class="icon">
+                                </button>
+                                <button class="icon-button" onclick="openMail('student@example.com')">
+                                    <img src="static/images/mail.png" alt="Email Icon" class="icon">
+                                </button>
+                                <button class="icon-button flag-icon" onclick="openReportModal()">
+                                    <img src="static/images/report.png" alt="Flag Icon" class="icon">
+                                </button>
+                            </div>
                             <div class="modal-text">
                                 <strong>Doh Kyungsoo</strong><br>
                                 Junior 2025<br>
@@ -390,9 +420,9 @@
         <div class="right-content" id="expectations-box">
             <div class="expectations-box">
                 <h2>Expectations</h2>
-                <p>Welcome to <strong>Studdies</strong> (study + buddies)!</p>
-                <p>Finding the <strong>right group</strong> of classmates or partners for <strong>study sessions</strong> and <strong>projects</strong> is often one of the most challenging parts of academic life.</p>
-                <p>Here are some expectations:</p>
+                <p>Welcome to <strong>Studdies</strong>!</p>
+                <p>Let's begin finding you the <strong>right group</strong> of classmates for <strong>study sessions</strong> and <strong>projects</strong>.</p>
+                <p>Here are some <strong>expectations</strong>:</p>
                 <ul>
                     <li>Be respectful to your peers.</li>
                     <li>Collaborate effectively in group projects.</li>
@@ -404,6 +434,19 @@
         </div>
     </section>
     <div class="overlay" id="overlay"></div>
+
+    <div id="friendPopup" class="popup" style="display:none;">
+        <p>Added as a friend!</p>
+    </div>
+    
+    <!-- Report Modal -->
+    <div id="reportModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <p>Are you sure you want to report this user for inappropriate conduct?</p>
+            <button class="modal-button green-button" onclick="confirmReport()">Yes</button>
+            <button class="modal-button red-button" onclick="closeReportModal()">Cancel</button>
+        </div>
+    </div>
     <script src="homepage.js"></script>
 </body>
 </html>

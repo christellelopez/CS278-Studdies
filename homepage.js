@@ -156,6 +156,7 @@ function filterNames(className) {
     const filterValue = document.getElementById(`filter-${className}`).value.toLowerCase();
     
     const buttons = document.querySelectorAll(`#${className}-content .modal-button`);
+    let hasResults = false;
 
     buttons.forEach(button => {
         const nameText = button.querySelector('.button-text strong').textContent.toLowerCase();
@@ -171,8 +172,16 @@ function filterNames(className) {
 
         if (matchesSearch && matchesFilter) {
             button.style.display = 'block';
+            hasResults = true;
         } else {
             button.style.display = 'none';
         }
     });
+
+    const noResults = document.getElementById(`no-results-${className}`);
+    if (hasResults) {
+        noResults.style.display = 'none';
+    } else {
+        noResults.style.display = 'block';
+    }
 }

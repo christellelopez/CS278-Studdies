@@ -1,9 +1,14 @@
-const { createClient } = supabase;
+// const { createClient } = supabase;
 
-const supabaseUrl = 'https://cyjrkuryjgvnpmostupl.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN5anJrdXJ5amd2bnBtb3N0dXBsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTcyOTc3MzcsImV4cCI6MjAzMjg3MzczN30.XAaWW7CxH1AJ_JHvGQRdbdOMDf5j0B2e04XRmXhRE_4';
-const supabase = createClient(supabaseUrl, supabaseKey);
+// const supabaseUrl = 'https://cyjrkuryjgvnpmostupl.supabase.co';
+// const supabaseKey = process.env.SUPABASE_KEY;
+// const supabase = createClient(supabaseUrl, supabaseKey);
 
+// import { createClient } from '@supabase/supabase-js';
+
+// const supabaseUrl = 'https://cyjrkuryjgvnpmostupl.supabase.co';
+// const supabaseKey = process.env.SUPABASE_KEY;
+// const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Fetch EXAMPLE
 // async function fetchProfiles() {

@@ -1,3 +1,9 @@
+import { createClient } from '@supabase/supabase-js';
+
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
+const supabase = createClient(supabaseUrl, supabaseKey);
+
 function toggleDropdown() {
     const navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('active');
@@ -20,7 +26,7 @@ const loadFile = (event) => {
     document.querySelector('.image-upload label').classList.add('image-uploaded');
 };
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
     console.log('DOM fully loaded and parsed');
     console.log('Supabase client:', supabase);
 
@@ -31,23 +37,19 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     async function fetchProfiles() {
-        let { data, error } = await supabase
-            .from('profiles')
-            .select('*');
-        
+        const { data, error } = await supabase
+            .from('Users')
+            .select('first_name')
+            .eq('email', 'crissyl@stanford.edu');
+
         if (error) {
             console.error('Error fetching profiles:', error);
         } else {
-            console.log('Profiles:', data);
+            console.log('User name:', data);
         }
-        }
-        
-    fetchProfiles();
-});
+    }
 
-document.addEventListener('DOMContentLoaded', function () {
-    console.log('DOM fully loaded and parsed');
-    console.log('Supabase client:', supabase);
+    fetchProfiles();
 
     const form = document.querySelector('form');
     form.addEventListener('submit', async function (event) {
@@ -60,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         try {
             // Step 1: Sign up the user
-            console.log("here")
+            console.log("here");
             const { user, error: signUpError } = await supabase.auth.signUp({
                 email: email,
                 password: password
@@ -74,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 email: user.email,
                 first_name: first_name,
                 last_name: last_name
-            });signUpError
+            });
 
             if (profileError) {
                 throw profileError;

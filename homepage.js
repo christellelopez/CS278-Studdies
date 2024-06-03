@@ -21,7 +21,7 @@ function toggleLike(button) {
     if (button.classList.contains("connect-button")) {
         button.classList.remove("connect-button");
         button.classList.add("liked-button");
-        button.textContent = "Liked";
+        button.textContent = "Connected";
     } else {
         button.classList.remove("liked-button");
         button.classList.add("connect-button");

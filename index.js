@@ -19,3 +19,71 @@ const loadFile = (event) => {
     };
     document.querySelector('.image-upload label').classList.add('image-uploaded');
 };
+
+document.addEventListener('DOMContentLoaded', function () {
+    console.log('DOM fully loaded and parsed');
+    console.log('Supabase client:', supabase);
+
+    if (typeof supabase.from === 'function') {
+        console.log("'from' method is available in the Supabase client.");
+    } else {
+        console.error("'from' method is not available in the Supabase client.");
+    }
+
+    async function fetchProfiles() {
+        let { data, error } = await supabase
+            .from('profiles')
+            .select('*');
+        
+        if (error) {
+            console.error('Error fetching profiles:', error);
+        } else {
+            console.log('Profiles:', data);
+        }
+        }
+        
+    fetchProfiles();
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    console.log('DOM fully loaded and parsed');
+    console.log('Supabase client:', supabase);
+
+    const form = document.querySelector('form');
+    form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+
+        const first_name = document.getElementById('first_name').value;
+        const last_name = document.getElementById('last_name').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        try {
+            // Step 1: Sign up the user
+            console.log("here")
+            const { user, error: signUpError } = await supabase.auth.signUp({
+                email: email,
+                password: password
+            });
+            if (signUpError) {
+                throw signUpError;
+            }
+
+            // Step 2: Update the user's profile
+            const { error: profileError } = await supabase.from('profiles').upsert({
+                email: user.email,
+                first_name: first_name,
+                last_name: last_name
+            });signUpError
+
+            if (profileError) {
+                throw profileError;
+            }
+
+            alert('Signup successful! Please check your email to confirm your account.');
+        } catch (error) {
+            console.error('Error signing up:', error.message);
+            alert('Error signing up: ' + error.message);
+        }
+    });
+});

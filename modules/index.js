@@ -27,6 +27,7 @@ const loadFile = (event) => {
 };
 
 document.addEventListener('DOMContentLoaded', async function () {
+<<<<<<< HEAD
     console.log('DOM fully loaded and parsed');
     console.log('Supabase client:', supabase);
 
@@ -49,6 +50,8 @@ document.addEventListener('DOMContentLoaded', async function () {
         }
         
     fetchProfiles();
+=======
+>>>>>>> 1008c53d8b67cdc5452bda01cef0dc6dbffe4eb5
 
     const form = document.querySelector('form');
     form.addEventListener('submit', async function (event) {
@@ -60,6 +63,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         const password = document.getElementById('password').value;
 
         try {
+<<<<<<< HEAD
             // Step 1: Sign up the user
             console.log("here");
             const { user, error: signUpError } = await supabase.auth.signUp({
@@ -90,5 +94,27 @@ document.addEventListener('DOMContentLoaded', async function () {
             console.error('Error signing up:', error.message);
             alert('Error signing up: ' + error.message);
         }
+=======
+            const { data, error } = await supabase
+              .from('Users')
+              .insert([
+                {
+                  email: email,
+                  password: password, 
+                  first_name: first_name,
+                  last_name: last_name
+                },
+              ]);
+        
+            if (error) throw error;
+        
+            console.log('User added:', data);
+            return data;
+            window.location.href = 'profile.html';
+          } catch (error) {
+            console.error('Error adding user:', error);
+            return null;
+          }
+>>>>>>> 1008c53d8b67cdc5452bda01cef0dc6dbffe4eb5
     });
 });

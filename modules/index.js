@@ -37,18 +37,17 @@ document.addEventListener('DOMContentLoaded', async function () {
     }
 
     async function fetchProfiles() {
-        const { data, error } = await supabase
+        let { data, error } = await supabase
             .from('Users')
-            .select('first_name')
-            .eq('email', 'crissyl@stanford.edu');
-
+            .select('*');
+        
         if (error) {
             console.error('Error fetching profiles:', error);
         } else {
-            console.log('User name:', data);
+            console.log('Profiles:', data);
         }
-    }
-
+        }
+        
     fetchProfiles();
 
     const form = document.querySelector('form');
@@ -67,12 +66,16 @@ document.addEventListener('DOMContentLoaded', async function () {
                 email: email,
                 password: password
             });
+            
+            console.log('User:', user);
+
             if (signUpError) {
+                console.error('Sign up error:', signUpError);
                 throw signUpError;
             }
 
             // Step 2: Update the user's profile
-            const { error: profileError } = await supabase.from('profiles').upsert({
+            const { error: profileError } = await supabase.from('Users').upsert({
                 email: user.email,
                 first_name: first_name,
                 last_name: last_name
